@@ -16,3 +16,17 @@
 
 attempted relative import with no known parent package解决办法：
 创建一个新的__init__.py文件
+
+问题：
+auth.User.groups: (fields.E304) Reverse accessor for 'User.groups' clashes with reverse accessor for 'User.groups'.
+	HINT: Add or change a related_name argument to the definition for 'User.groups' or 'User.groups'.
+auth.User.user_permissions: (fields.E304) Reverse accessor for 'User.user_permissions' clashes with reverse accessor for 'User.user_permissions'.
+	HINT: Add or change a related_name argument to the definition for 'User.user_permissions' or 'User.user_permissions'.
+users.User.groups: (fields.E304) Reverse accessor for 'User.groups' clashes with reverse accessor for 'User.groups'.
+	HINT: Add or change a related_name argument to the definition for 'User.groups' or 'User.groups'.
+users.User.user_permissions: (fields.E304) Reverse accessor for 'User.user_permissions' clashes with reverse accessor for 'User.user_permissions'.
+	HINT: Add or change a related_name argument to the definition for 'User.user_permissions' or 'User.user_permissions'.
+
+解决办法：
+setting下# AUTH_USER_MODEL = 'users.User'   #自己加的   使用user下的User模型
+
