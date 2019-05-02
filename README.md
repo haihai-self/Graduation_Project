@@ -16,7 +16,9 @@
 
 attempted relative import with no known parent package解决办法：
 创建一个新的__init__.py文件
-
+ 解决执行下面命令生成相关用户表即可:
+    python manage.py  makemigrations
+    python manage.py  migrate
 问题：
 auth.User.groups: (fields.E304) Reverse accessor for 'User.groups' clashes with reverse accessor for 'User.groups'.
 	HINT: Add or change a related_name argument to the definition for 'User.groups' or 'User.groups'.
@@ -35,3 +37,15 @@ setting下# AUTH_USER_MODEL = 'users.User'   #自己加的   使用user下的Use
 do：实现注册界面与index界面，注册界面使用的是form表单连接django内置的注册结构
 
 todo：实现数据库的连接与用户数据表的设计，实现登录注册功能
+
+
+问题：ValueError: Dependency on app with no migrations: users
+
+错误原因： 在settings中加入了AUTH_USER_MODEL 
+
+解决办法： 
+解决执行下面命令生成相关用户表即可:
+
+python manage.py  makemigrations
+
+python manage.py  migrate
