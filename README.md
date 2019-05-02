@@ -30,3 +30,8 @@ users.User.user_permissions: (fields.E304) Reverse accessor for 'User.user_permi
 解决办法：
 setting下# AUTH_USER_MODEL = 'users.User'   #自己加的   使用user下的User模型
 
+***2019/5/2***
+
+do：实现注册界面与index界面，注册界面使用的是form表单连接django内置的注册结构
+
+todo：实现数据库的连接与用户数据表的设计，实现登录注册功能
