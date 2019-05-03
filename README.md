@@ -49,3 +49,28 @@ todo：实现数据库的连接与用户数据表的设计，实现登录注册�
 python manage.py  makemigrations
 
 python manage.py  migrate
+
+问题：安装myqsqlclient 出现错误
+
+Command "python setup.py egg_info" failed with error code 1 in /tmp/pip-build-vunywnz7/mysqlclient/
+
+解决办法：
+sudo  apt-get install libmysqlclient-dev python3-dev
+然后
+pip install mysqlclient就不会报错找不到'mysql_config'了
+
+问题：Error loading MySQLdb module: No module named 'MySQLdb'.
+
+解决办法：
+在__init__.py 文件中添加以下代码
+
+import pymysql
+pymysql.install_as_MySQLdb()
+
+***2019/5/2***
+
+do：
+实现登录注册模块，连接上数据库
+
+todo:
+
