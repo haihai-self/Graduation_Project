@@ -80,3 +80,18 @@ todo:导入电影数据集，设计数据库表格
 2.提交评价之后数据库更新为追加，不是覆盖原有评分
 
 ***2019/5/4***
+
+do：
+新建表moviegenre3用于存储imdbId相应的电影海报
+
+CREATE TABLE moviegenre3(imdbId INT NOT NULL PRIMARY KEY,title varchar(300),poster varchar(600));
+
+导入数据：
+LOAD DATA LOCAL INFILE 'z:/home/mo/Downloads/MovieGenre3.csv' INTO TABLE moviegenre3
+FIELDS TERMINATED BY ','
+ENCLOSED BY '"'
+LINES TERMINATED BY ',,\n'
+(imdbId,title,poster);
+
+
+
