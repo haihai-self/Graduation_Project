@@ -82,7 +82,10 @@ todo:导入电影数据集，设计数据库表格
 ***2019/5/4***
 
 do：
-新建表moviegenre3用于存储imdbId相应的电影海报
+新建表moviegenre3用于存储imdbId相应的电影海报,导入了相应的数据，实现的数据库的迁移。
+
+todo：
+实现登录算法，并跑通整个工程。与老师沟通相应的修改题目。
 
 CREATE TABLE moviegenre3(imdbId INT NOT NULL PRIMARY KEY,title varchar(300),poster varchar(600));
 
@@ -93,5 +96,5 @@ ENCLOSED BY '"'
 LINES TERMINATED BY ',,\n'
 (imdbId,title,poster);
 
-
+***2019/5/5***
 
