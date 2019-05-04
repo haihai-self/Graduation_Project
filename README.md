@@ -67,10 +67,16 @@ pip install mysqlclient就不会报错找不到'mysql_config'了
 import pymysql
 pymysql.install_as_MySQLdb()
 
-***2019/5/2***
+***2019/5/3***
 
 do：
 实现登录注册模块，连接上数据库
 
-todo:
+todo:导入电影数据集，设计数据库表格
 
+存在问题：
+1. 每次提交评价只能提交一个
+
+2.提交评价之后数据库更新为追加，不是覆盖原有评分
+
+***2019/5/4***
