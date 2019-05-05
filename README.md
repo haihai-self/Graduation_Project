@@ -98,3 +98,17 @@ LINES TERMINATED BY ',,\n'
 
 ***2019/5/5***
 
+do:
+
+todo:
+
+构建评分表：
+
+CREATE TABLE ratings(userId INT(11) NOT NULL ,imdbId INT(11) NOT NULL, rating DECIMAL(3,1),id int(11) NOT NULL PRIMARY KEY auto_increment)
+
+load data local infile "z:/home/mo/Downloads/hhhh.csv" into table ratings fields terminated by ','
+enclosed by '"'
+lines terminated by '\n'
+(userId,imdbId,rating);
+
+****
