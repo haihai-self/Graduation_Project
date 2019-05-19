@@ -113,4 +113,58 @@ lines terminated by '\n'
 
 
 
+CREATE TABLE users(
+id int(11) NOT NULL PRIMARY KEY auto_increment,
+passwords VARCHAR(255) NOT NULL,
+username VARCHAR(255) NOT NULL,
+email VARCHAR(255) NOT NULL,
+last_login VARCHAR(255),
+last_joined VARCHAR(255),
+is_active TINYINT(1))
+
+CREATE TABLE movies(
+movieid INT(11) NOT NULL PRIMARY KEY,
+tittle VARCHAR(255) NOT NULL,
+genres VARCHAR(255) NOT NULL)
+
+CREATE TABLE links(
+movieid INT(11) ,
+imdbid INT(11) PRIMARY KEY,
+tmdbid INT(11),
+FOREIGN KEY (movieid) REFERENCES movies(movieid))
+
+CREATE TABLE moviegenre(
+movieid INT(11) ,
+tittle VARCHAR(255) ,
+poster VARCHAR(255) NOT NULL PRIMARY KEY,
+FOREIGN KEY (movieid) REFERENCES movies(movieid))
+
+CREATE TABLE recomendate_movie(
+id INT(11) NOT NULL PRIMARY KEY,
+userid INT(11) NOT NULL,
+tittle VARCHAR(255),
+poster VARCHAR(255) ,
+FOREIGN KEY (userid) REFERENCES users(id),
+FOREIGN KEY (poster) REFERENCES moviegenre(poster)
+)
+
+CREATE TABLE ratings(
+userId int(11) NOT NULL PRIMARY KEY,
+movieId INT(11) NOT NULL,
+rating DECIMAL(3,1),
+timestamp VARCHAR(255),
+FOREIGN KEY (movieid) REFERENCES movies(movieid)
+)
+CREATE TABLE user_ratings(
+id int(11) NOT NULL PRIMARY KEY auto_increment,
+userId INT(11) NOT NULL ,
+imdbId INT(11) NOT NULL, 
+rating DECIMAL(3,1),
+timestamp VARCHAR(255),
+FOREIGN KEY (userid) REFERENCES users(id),
+FOREIGN KEY (imdbId) REFERENCES links(imdbid)
+)
+
+
+
 ****
